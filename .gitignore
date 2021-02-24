@@ -142,3 +142,7 @@ cython_debug/
 
 *.doc
 *.docx
+
+Lib/
+Scripts/
+pyvenv.cfg
