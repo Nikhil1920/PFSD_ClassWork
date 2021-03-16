@@ -8,8 +8,8 @@ Creating an APP in Django.
 
 3. In "polls/views.py", add the code below.
 -----------------polls/views.py--------------------
-  from django.http import HttpResponse
- def index(request):
+from django.http import HttpResponse
+def index(request):
 	return HttpResponse("Hi Django, we got you there.")
 ----------------------------------------------------------
 
