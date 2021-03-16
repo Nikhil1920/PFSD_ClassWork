@@ -1,0 +1,22 @@
+Introducing admin/super users in Django.
+
+1. In terminal type following command(must confirm  that we are in the same directory with "manage.py" file.
+	T: python manage.py migrate
+
+2. In terminal type as below and do necessary tasks as asked by Django.
+
+	T: python manage.py createsuperuser
+
+Fill as it comes.
+	User Name :
+	E-mail        : 
+	Password   :  
+"  Super user created Successfully !!!" .
+3. Goto Terminal and type following.
+
+	T: python manage.py runserver
+4. Goto the URL and resolve the error.......
+
+5. Get back to us , if you find the "Admin login Screen".
+
+Admin panel can be found at http://127.0.0.1:8000/admin

@@ -1,0 +1,22 @@
+1. Open Pycharm and create a project
+
+2. Install Django
+ 	T: pip install django
+ 	T: python -m django --version
+
+3.  Ceate a django project
+ 	T: django-admin startproject <project_name>
+  	e.g: T: django-admin startproject mysite
+
+4. Observe the created directory structure carefully !
+
+5. Go inside  mysite folder/directory
+ 	T: cd <directory name>
+
+6.1:  Run the project for testing your Django.
+     	T: python manage.py runserver
+6.2: You can override the default port by specifying it by yourself.
+       	T: python manage.py runserver  <port no as integer>
+      	e.g: T: python manage.py runserver  9600
+
+7. Goto the url and tell me what you are getting !

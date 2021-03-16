@@ -1,0 +1,41 @@
+Creating an APP in Django.
+====================
+1. make sure that we are in the same directory with  "manage.py" file.
+2. Type the command in Terminal.
+	T: python manage.py startapp <appname>
+	eg: python manage.py startapp polls
+* That will create directories and files, Observe these in details.
+
+3. In "polls/views.py", add the code below.
+-----------------polls/views.py--------------------
+  from django.http import HttpResponse
+ def index(request):
+	return HttpResponse("Hi Django, we got you there.")
+----------------------------------------------------------
+
+4 In "polls/urls.py" add the code below
+------------------polls/urls.py--------------------------
+ from django.urls import path
+ from . import views
+ urlpatterns = [
+	path('', views.index, name='index'),
+	]
+--------------------------------------------------------------
+ 
+5. In "mysite/urls.py" add the code below.
+-------------- mysite/urls.py------------------------
+ from django.contrib import admin
+ from django.urls import include, path
+ urlpatterns = [
+	path('polls/', include('polls.urls')),
+	path('admin/', admin.site.urls),
+	]
+
+6. After all the above works, goto terminal and type command below.
+	T: python manage.py runserver
+
+7. May be you are getting " Error !!! 404 ,  Page not Found !!".
+
+8. Find the reason and getback to us.
+
+App can be found here: http://127.0.0.1:8000/polls
