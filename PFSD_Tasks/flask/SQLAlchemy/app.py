@@ -30,3 +30,26 @@ def insert_data2():
     db.session.add(i)
     db.session.commit()
     return render_template('insert_data.html', title="insert_page_title")
+
+
+@app.route('/input')
+def input():
+    return render_template('input.html', title='input_page_title')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/book_details')
+def book_details():
+    return render_template('book_details.html', books=User1.query)
+
+
+class User1(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    author = db.Column(db.String(100), nullable=True)
+    date = db.Column(db.Date, nullable=False, default=datetime.)
+    Issuelist
