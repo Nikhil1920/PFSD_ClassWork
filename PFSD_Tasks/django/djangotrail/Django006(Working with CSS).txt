@@ -1,0 +1,37 @@
+WORKING WITH CSS WITH DJANGO.
+--------------------------------------------------
+Similar like other web frameworks, we also add some styles to
+HTML pages inside Django applications.
+
+The steps are very easy as below.
+Step-1: Inside your App directory, create a Folder named 'static'.
+
+Step-2: Go inside 'static' and create another Folder 'css'.
+
+Step-3: Create css file with name 'style.css' inside it(the 'css' folder).
+
+Step-4: Sample code for CSS file.
+------------------------ App/static/css/style.css------------------------------
+
+		body {
+  			background-color: blue;
+		         }
+-----------------------------------------------------------------------------------
+Step-5: Add the codes to your HTML file.
+---------------------- App/templates/App/index.html-----------------------
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link rel="stylesheet"  href="{% static 'css/style.css'  %}">
+
+    <title>KLU</title>
+  </head>
+
+Step-6: Add lines in settings.py in your project file.
+1. import os
+
+2. STATIC_ROOT = os.path.join(BASE_DIR,  'static')
+
+Step-7: Execute it.

@@ -1,0 +1,65 @@
+Creating multiple views:
+--A view is actually a page in Django app.
+Step-1: 
+ 	In app/views.py file add codes as below.
+------------- app/views.py ------------------------
+from django.http import HttpResponse
+#Added view-1
+def index(request):
+    return HttpResponse("<h1>Welcome to KL University  Index page.<h1>")
+
+#Added view-2    
+def first(request):
+    return HttpResponse("<h1>Welcome to KL University  page-1.<h1>")
+
+#Added view-3    
+def second(request):
+    return HttpResponse("<h1>Welcome to KL University  page-2.</h1>")
+--------------------------------------------------------------------    
+Step-2:
+
+Do add few lines  in app/urls.py  
+-------------- app/urls.py ---------------------------------------
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('  ', views.index, name='index'),
+    path('first/', views.first, name='first'),
+    path('second/', views.second, name='second'),
+---------------------------------------------------------------------
+
+Step-3:
+
+Do add few lines  in project/urls.py  
+-------------- project/urls.py ---------------------------------------
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path(' ', include('courses.urls')),
+    path('admin/', admin.site.urls),
+]
+-------------------------------------------------------------------------
+Step-4: Goto TERMINAL and run.
+
+Additional Step: In Step-4, if you get an error, simply goto settings.py 
+and register your app with Django by adding following line.
+INSTALLED_APPS = [
+     'courses',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',   
+]
+
+
+
+
+
+
+
+
+
